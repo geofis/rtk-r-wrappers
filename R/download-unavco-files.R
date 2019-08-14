@@ -25,7 +25,7 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
   )
   files <- unlist(foo)
   #Subfolder creation
-  dir <- paste0(st, d, '0.', y)
+  dir <- paste0(st, d)
   if(dl){
     system(paste0('mkdir ', dir))
   }
