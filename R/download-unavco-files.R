@@ -3,7 +3,7 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
   # Example: unavcodown(y = 19,d = '2019-08-03', st = 'rdsd', dl = T, unc = T)
   # Args:
   #   y:    One two digits integer indicating the year
-  #   d:    Character string of date in YYYY-MM-DD format. Example: 2019-08-13
+  #   d:    Character string of date in YYYY-MM-DD format. Example: '2019-08-13'
   #   st:   One character string of the station name
   #   dl:   Download files
   #   unc:  Uncompress *.Z files
@@ -13,7 +13,7 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
   # Generate remote file names 
   pre <- 'o'
   tp <- c('obs', 'nav')
-  d <- strftime(d, format = '%')
+  d <- strftime(d, format = '%j')
   foo <- lapply(
     tp,
     function(x){
