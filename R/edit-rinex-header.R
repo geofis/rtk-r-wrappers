@@ -13,5 +13,4 @@ editrnxhd <- function(fromcors = T, newpos){
     paste0('  2078678.8000 -5683737.3030  2006886.8270                  ', 'APPROX'),
     foo)
   writeLines(bar, gsub('.19o','_edited.19o',obsfile))
-  # return(obsfile)
 }
