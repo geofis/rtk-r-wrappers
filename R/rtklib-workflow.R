@@ -1,4 +1,4 @@
-rtklibwf <- function(y, d, st = 'rdsd', conf = '03', from = 'unacodown'){
+rtklibwf <- function(y, d, st = 'rdsd', conf = '03', from = 'unavcodown'){
   ghpath <- 'https://raw.githubusercontent.com/geofis/rtk-r-wrappers/master/R/'
   if(from == 'unavcodown'){
     if(identical(grep('^unavcodown$', ls(.GlobalEnv)), integer(0))){
