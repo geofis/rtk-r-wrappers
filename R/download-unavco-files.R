@@ -28,7 +28,7 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
   #Subfolder creation
   dir <- paste0(st, d, '/unavco')
   if(dl){
-    system(paste0('mkdir -p', dir))
+    system(paste0('mkdir -p ', dir))
   }
   # Download module
   if(dl){
