@@ -39,6 +39,5 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
     }
   }
   # Uncompress module
-  system(paste0('uncompress ', dir, '/*.Z'))
-  # return(list(files, dir, wget))
+  system(paste0('uncompress -k ', dir, '/*.Z'))
 }
