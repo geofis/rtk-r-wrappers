@@ -1,4 +1,4 @@
-convrtkp <- function(conf = '01'){
+convrtkp <- function(conf = '03'){
   confile <- paste0('rtkpost', conf, '.conf')
   download.file(
     paste0(

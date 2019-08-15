@@ -1,4 +1,4 @@
-rtklibwf <- function(y, d, st, from){
+rtklibwf <- function(y, d, st = 'rdsd', conf = '03', from = 'unacodown'){
   ghpath <- 'https://raw.githubusercontent.com/geofis/rtk-r-wrappers/master/R/'
   if(from == 'unavcodown'){
     if(identical(grep('^unavcodown$', ls(.GlobalEnv)), integer(0))){
@@ -28,7 +28,7 @@ rtklibwf <- function(y, d, st, from){
       require(devtools)
       source_url(paste0(ghpath, 'convbin-rtk2rtkp.R'))
     }
-    convrtkp()
+    convrtkp(conf = conf)
     from <- 'delrnx'
   }
   if(from == 'delrnx'){
