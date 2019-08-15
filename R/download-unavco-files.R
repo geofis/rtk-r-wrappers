@@ -8,7 +8,7 @@ unavcodown <- function(y, d, st, dl = T, unc = T){
   #   dl:   Download files
   #   unc:  Uncompress *.Z files
   # Returns:
-  #   Files downloaded and unzipped in a folder named '<st><d>0.<y>' located in the working directory
+  #   Files downloaded in a folder named '<st><d>0.<y>' located in the working directory
   
   # Generate remote file names 
   pre <- 'o'
