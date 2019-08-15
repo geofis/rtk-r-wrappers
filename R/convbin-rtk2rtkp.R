@@ -1,4 +1,4 @@
-convrtkp <- function(conf = '03'){
+convrtkp <- function(convubx = T, conf = '03'){
   confile <- paste0('rtkpost', conf, '.conf')
   download.file(
     paste0(
@@ -8,13 +8,15 @@ convrtkp <- function(conf = '03'){
     ),
     destfile = confile
   )
-  ubx <- list.files(pattern = '*.ubx')
-  system(
-    paste0(
-      'convbin -od -os -oi -ot -v 3.03 ',
-      ubx
+  if(convubx) {
+    ubx <- list.files(pattern = '*.ubx')
+    system(
+      paste0(
+        'convbin -od -os -oi -ot -v 3.03 ',
+        ubx
+      )
     )
-  )
+  }
   obs <- list.files(pattern = '*.obs')
   obsref <- list.files(pattern = '*_edited.[0-9][0-9]o', recursive = T)
   nav <- list.files(pattern = '*.[0-9][0-9][egn]', recursive = T)
