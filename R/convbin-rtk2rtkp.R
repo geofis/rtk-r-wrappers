@@ -8,8 +8,8 @@ convrtkp <- function(convubx = T, conf = '03'){
     ),
     destfile = confile
   )
+  ubx <- list.files(pattern = '*.ubx')
   if(convubx) {
-    ubx <- list.files(pattern = '*.ubx')
     system(
       paste0(
         'convbin -od -os -oi -ot -v 3.03 ',
