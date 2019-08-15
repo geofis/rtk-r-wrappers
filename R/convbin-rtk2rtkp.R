@@ -21,7 +21,7 @@ convrtkp <- function(conf = '01'){
   system(
     paste0(
       'rnx2rtkp -k ', 
-      confile, ' -o ', gsub('.ubx', '_conf', conf, '_solution.pos', ubx),
+      confile, ' -o ', gsub('.ubx', paste0('_conf', conf, '_solution.pos'), ubx),
       ' ', obs, ' ', obsref,
       ' ', paste0(nav, collapse = ' ')
     )
