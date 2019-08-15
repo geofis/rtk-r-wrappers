@@ -6,6 +6,7 @@ rtklibwf <- function(y, d, st = 'rdsd', conf = '03', from = 'unavcodown'){
       source_url(paste0(ghpath, 'download-unavco-files.R'))
     }
     unavcodown(y = y,d = d, st = st, dl = T, unc = T)
+    from <- 'unavcounc'
   }
   if(from == 'unavcounc'){
     if(identical(grep('^unavcounc$', ls(.GlobalEnv)), integer(0))){
