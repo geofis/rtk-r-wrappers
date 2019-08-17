@@ -1,6 +1,6 @@
 convrtkp <- function(convubx = T, conf = '03'){
   confile <- paste0('rtkpost', conf, '.conf')
-  if(!length(list.files(pattern = confile))==0){
+  if(!length(list.files(pattern = paste0(confile,'$')))==1){
     download.file(
       paste0(
         'https://raw.githubusercontent.com/geofis/',
