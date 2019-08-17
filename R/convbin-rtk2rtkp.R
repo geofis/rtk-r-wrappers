@@ -1,13 +1,15 @@
 convrtkp <- function(convubx = T, conf = '03'){
   confile <- paste0('rtkpost', conf, '.conf')
-  download.file(
-    paste0(
-      'https://raw.githubusercontent.com/geofis/',
-      'rtk-r-wrappers/master/conf/',
-      'rtkpost', conf, '.conf'
-    ),
-    destfile = confile
-  )
+  if(!length(list.files(pattern = confile))==0){
+    download.file(
+      paste0(
+        'https://raw.githubusercontent.com/geofis/',
+        'rtk-r-wrappers/master/conf/',
+        'rtkpost', conf, '.conf'
+      ),
+      destfile = confile
+    )
+  }
   ubx <- list.files(pattern = '*.ubx')
   if(convubx) {
     system(
