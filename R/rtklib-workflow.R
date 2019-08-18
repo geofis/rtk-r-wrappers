@@ -1,4 +1,7 @@
 rtklibwf <- function(y, d, st = 'rdsd', convubx = T, conf = '03', from = 'unavcodown'){
+  #Example1: rtklibwf(y = 19, d = '2019-08-16', conf = '03')
+  #Example2: rtklibwf(y = 19, d = '2019-08-16', conf = '05', from = 'unavcounc')
+  #Example3: rtklibwf(y = 19, d = '2019-08-16', convubx = F, conf = '03', from = 'unavcounc')
   ghpath <- 'https://raw.githubusercontent.com/geofis/rtk-r-wrappers/master/R/'
   if(from == 'unavcodown'){
     if(identical(grep('^unavcodown$', ls(.GlobalEnv)), integer(0))){
