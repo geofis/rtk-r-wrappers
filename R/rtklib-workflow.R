@@ -1,4 +1,4 @@
-rtklibwf <- function(y, d, st = 'rdsd', convubx = T, conf = '03', from = 'unavcodown'){
+rtklibwf <- function(y, d, st = 'rdsd', convubx = T, conf = '03', from = 'unavcodown', editedhd = T){
   #Example1: rtklibwf(y = 19, d = '2019-08-16', conf = '03')
   #Example2: rtklibwf(y = 19, d = '2019-08-16', conf = '05', from = 'unavcounc')
   #Example3: rtklibwf(y = 19, d = '2019-08-16', convubx = F, conf = '03', from = 'unavcounc')
@@ -32,7 +32,7 @@ rtklibwf <- function(y, d, st = 'rdsd', convubx = T, conf = '03', from = 'unavco
       require(devtools)
       source_url(paste0(ghpath, 'convbin-rtk2rtkp.R'))
     }
-    convrtkp(convubx = convubx, conf = conf)
+    convrtkp(convubx = convubx, conf = conf, editedhd = editedhd)
     from <- 'delrnx'
   }
   if(from == 'delrnx'){

@@ -1,4 +1,4 @@
-convrtkp <- function(convubx = T, conf = '03'){
+convrtkp <- function(convubx = T, conf = '03', editedhd = T){
   confile <- paste0('rtkpost', conf, '.conf')
   if(!length(list.files(pattern = paste0(confile,'$')))==1){
     download.file(
@@ -20,8 +20,12 @@ convrtkp <- function(convubx = T, conf = '03'){
     )
   }
   obs <- list.files(pattern = '*.obs')
-  obsref <- list.files(pattern = '*_edited.[0-9][0-9]o', recursive = T)
-  nav <- list.files(pattern = '*.[0-9][0-9][egn]', recursive = T)
+  if(editedhd){
+    obsref <- list.files(pattern = '*_edited\\.[0-9][0-9]o$', recursive = T)
+  } else {
+    obsref <- list.files(pattern = '*[0-9]\\.[0-9][0-9]o$', recursive = T)
+  }
+  nav <- list.files(pattern = '*.[0-9][0-9][egn]$', recursive = T)
   system(
     paste0(
       'rnx2rtkp -k ', 
