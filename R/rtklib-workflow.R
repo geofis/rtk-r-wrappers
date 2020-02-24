@@ -20,14 +20,14 @@ rtklibwf <- function(y, d, st = 'rdsd', convubx = T, conf = '03', from = 'unavco
     unavcounc()
     from <- 'editrnxhd'
   }
-  if(from == 'editrnxhd'){
+  if(from == 'editrnxhd' & editedhd){
     if(identical(grep('^editrnxhd$', ls(.GlobalEnv)), integer(0))){
       require(devtools)
       source_url(paste0(ghpath, 'edit-rinex-header.R'))
     }
     editrnxhd()
     from <- 'convrtkp'
-  }
+  } else {from <- 'convrtkp'}
   if(from == 'convrtkp'){
     if(identical(grep('^convrtkp$', ls(.GlobalEnv)), integer(0))){
       require(devtools)
